@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
+import PricingModel from './PricingModel'
 
 const Header = () => {
   return (
@@ -34,14 +35,13 @@ const Header = () => {
             </SignInButton>
             <SignUpButton mode="modal">
               <Button
-               
                 size="sm"
                 className={
                   " h-8 rounded-full font-semibold active:scale-95 px-4 pt-0.5 "
                 }
               >
-                Get Started 
-                <ArrowRight className=" h-3 w-3 opacity-60 "/>
+                Get Started
+                <ArrowRight className=" h-3 w-3 opacity-60 " />
               </Button>
             </SignUpButton>
           </Show>
@@ -53,11 +53,13 @@ const Header = () => {
             >
               Projects
             </Link>
-
-            <span className="inline-flex h-8 items-center gap-1.5 rounded-full border border-white/10 bg-white/5  px-3  text-xs text-white/70">
-              <Zap className="mr-1 inline-block h-3 w-3 text-white" />
-              3/40 credits
-            </span>
+            <PricingModel>
+              <span className="inline-flex h-8 items-center gap-1.5 rounded-full border border-white/10 bg-white/5  px-3  text-xs text-white/70">
+                <Zap className="mr-1 inline-block h-3 w-3 text-white" />
+                3/40 credits
+              </span>
+            </PricingModel>
+ 
             <UserButton />
           </Show>
         </div>
