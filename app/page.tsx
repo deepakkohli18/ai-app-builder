@@ -41,7 +41,7 @@ export default function Home() {
   }, [prompt]) ; 
   
   const handleSubmit = () => {
-    if (!prompt.trim() || isSignedIn  ) return;
+    if (!prompt.trim() || !isSignedIn  ) return;
     router.push(`/workspace?prompt=${encodeURIComponent(prompt.trim())}`);
     
     }
@@ -136,6 +136,7 @@ export default function Home() {
                   {/* The div is the single child Clerk is looking for */}
                   <div className="flex items-center gap-2">
                     <Button
+                      onClick={handleSubmit}
                       type="button"
                       className="h-8 rounded-full bg-white px-5 font-semibold"
                     >
@@ -409,19 +410,18 @@ export default function Home() {
         </div>
 
         <div className="mx-auto max-w-5xl">
-          <PricingTable 
-          checkoutProps={{
-           appearance : {
-            elements : {
-              drawerRoot:{
-                zIndex :2000,
-              }
-            }
-           }
-          }}
+          <PricingTable
+            checkoutProps={{
+              appearance: {
+                elements: {
+                  drawerRoot: {
+                    zIndex: 2000,
+                  },
+                },
+              },
+            }}
           />
         </div>
-      
       </section>
 
       <section
@@ -445,22 +445,21 @@ export default function Home() {
           <BlueTitle>for free. </BlueTitle>
         </h1>
         <p>
-          Get 10 free generations on sign up. No credit card required. 
-          <br/>
+          Get 10 free generations on sign up. No credit card
+          required.
+          <br />
           Upgrade when you&apos;re ready.
         </p>
 
         <SignInButton mode="modal">
           <Button
-          size="lg"
-          className="relative h-10 mt-5 rounded-full bg-white px-6"
+            size="lg"
+            className="relative h-10 mt-5 rounded-full bg-white px-6"
           >
-           Get started free 
-           <ChevronRight className="ml-2 h-4 w-4" />
+            Get started free
+            <ChevronRight className="ml-2 h-4 w-4" />
           </Button>
-         
         </SignInButton>
-
       </section>
 
       <footer className="relative z-10 border-t border-white/7 py-12 mx-auto px-6 flex flex-wrap items-center justify-center text-stone-400">

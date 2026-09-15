@@ -5,12 +5,12 @@ export const PLANS = {
     price: 0,
   },
   starter: {
-    label: "Starter",
+    label: "Pro",
     credits: 50,
     price: 9,
   },
   pro: {
-    label: "Pro",
+    label: "Pro Max",
     credits: 150,
     price: 29,
   },
